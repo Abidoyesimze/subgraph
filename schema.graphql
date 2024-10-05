@@ -1,0 +1,22 @@
+type Token @entity {
+  id: ID!
+  symbol: String!
+  name: String!
+  decimals: Int!
+  totalSupply: BigInt!
+}
+  
+type User @entity {
+  id: ID!
+  address: Bytes!
+  balance: BigInt!
+}
+
+type Transfer @entity {
+  id: ID!
+  from: User!
+  to: User!
+  value: BigInt!
+  timestamp: BigInt!
+  block: BigInt!
+}

@@ -1,0 +1,8 @@
+{
+  "sepolia": {
+    "MockERC20": {
+      "address": "0x53844F9577C2334e541Aec7Df7174ECe5dF1fCf0",
+      "startBlock": 3237409
+    }
+  }
+}

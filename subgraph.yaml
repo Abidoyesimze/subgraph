@@ -1,0 +1,26 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: ERC20
+    network: mainnet
+    source:
+      address: "0x53844F9577C2334e541Aec7Df7174ECe5dF1fCf0"  
+      abi: ERC20
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Token
+        - User
+        - Transfer
+      abis:
+        - name: ERC20
+          file: ./abis/MockERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
